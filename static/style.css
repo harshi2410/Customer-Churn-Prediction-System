@@ -1,0 +1,282 @@
+/* ========================================
+   TELCO CHURN PREDICTOR - STYLESHEET
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* Form Styles */
+.churn-form {
+    padding: 30px;
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #667eea;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 0.95em;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+    font-size: 0.85em;
+}
+
+/* Form Actions */
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 60px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Prediction Result */
+.prediction-result {
+    margin: 30px;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.result-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.result-probability {
+    font-size: 1.2em;
+    margin: 15px 0;
+    color: #555;
+}
+
+.result-actions {
+    margin-top: 25px;
+}
+
+.btn-reset {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Risk Level Colors */
+.prediction-result.high {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    border-left: 6px solid #f44336;
+}
+
+.prediction-result.medium {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border-left: 6px solid #ff9800;
+}
+
+.prediction-result.low {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-left: 6px solid #4caf50;
+}
+
+.prediction-result.error {
+    background: #ffebee;
+    border-left: 6px solid #f44336;
+    color: #d32f2f;
+}
+
+/* Footer Styles */
+.footer {
+    background: #f8f9fa;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.footer-meta {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        margin: 10px;
+    }
+
+    .churn-form,
+    .prediction-result {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 30px 20px;
+    }
+
+    .header h1 {
+        font-size: 1.6em;
+    }
+
+    .subtitle {
+        font-size: 0.95em;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+    }
+
+    .btn-submit,
+    .btn-reset {
+        width: 100%;
+        padding: 14px;
+    }
+}
