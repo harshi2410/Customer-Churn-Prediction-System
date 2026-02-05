@@ -1,0 +1,23 @@
+# Run this in Jupyter to generate requirements.txt
+import pkg_resources
+import subprocess
+import sys
+
+# Get installed packages
+packages = [dist.project_name for dist in pkg_resources.working_set]
+packages = sorted(packages)
+
+# Write to file
+with open('requirements.txt', 'w') as f:
+    for package in packages:
+        if package.lower() in ['pandas', 'numpy', 'scikit-learn', 'matplotlib', 
+                               'seaborn', 'imbalanced-learn', 'xgboost', 'joblib']:
+            try:
+                version = pkg_resources.get_distribution(package).version
+                f.write(f"{package}=={version}\n")
+            except:
+                f.write(f"{package}\n")
+
+print(" requirements.txt created!")
+print("\nContent:")
+!cat requirements.txt
