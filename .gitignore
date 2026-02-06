@@ -1,0 +1,14 @@
+# Jupyter
+*.ipynb
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files (adjust as needed)
+*.csv
+*.xlsx
+data/
+models/
